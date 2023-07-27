@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: auth-server
+
+  # PROFILE ACTIVE
+  profiles:
+    active: dev
+
+  # CONFIG SERVER NAME
+  config:
+    import: optional:configserver:http://localhost:8888/
+
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8082
+
+aw:
+  auth:
+    provider-uri: "http://localhost:8082"
+    jks:
+      keypass: 123456
+      storepass: 123456
+      alias: authserve
+      path: keystore/authserve.jks

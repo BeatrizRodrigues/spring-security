@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: auth-server
+
+  ldap:
+    embedded:
+      ldif: classpath:test-server.ldif
+      base-dn: dc=springframework,dc=org
+      port: 8389
+#      url: ldap://localhost:8389/
+
+# EUREKA CLIENT
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    preferIpAddress: true
+
+server:
+  port: 8082
+
+aw:
+  auth:
+    provider-uri: "http://localhost:8082"
+    jks:
+      keypass: 123456
+      storepass: 123456
+      alias: authTest
+      path: keystore/authTest.jks
